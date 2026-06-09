@@ -1,0 +1,297 @@
+/* Custom Premium Dark Theme for Library Management System */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #0a0e17;
+    --bg-surface: #141b2a;
+    --bg-surface-hover: #1e293d;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+    --success: #10b981;
+    --success-glow: rgba(16, 185, 129, 0.15);
+    --danger: #ef4444;
+    --danger-glow: rgba(239, 68, 68, 0.15);
+    --warning: #f59e0b;
+    --border: #1e293b;
+    --radius: 12px;
+}
+
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Outfit', sans-serif !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Redesign */
+.navbar-custom {
+    background: rgba(20, 27, 42, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-primary) !important;
+    background: linear-gradient(135deg, #a5b4fc, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.navbar-custom .nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    margin-right: 1.5rem;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-item.active .nav-link {
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--accent);
+}
+
+/* Main Layout */
+.main-content {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+/* Glass Card */
+.card-custom {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    font-weight: 700 !important;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.3px;
+}
+
+/* Tables Redesign */
+.table-custom {
+    background: var(--bg-surface);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-top: 1.5rem;
+}
+
+.table-custom th {
+    background: #0f172a !important;
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 1.2rem 1rem !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-top: none !important;
+}
+
+.table-custom td {
+    padding: 1.2rem 1rem !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border) !important;
+    background: transparent !important;
+    vertical-align: middle !important;
+}
+
+.table-custom tr:last-child td {
+    border-bottom: none !important;
+}
+
+.table-custom tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table-custom tbody tr:hover {
+    background-color: var(--bg-surface-hover) !important;
+}
+
+/* Badges */
+.badge-custom {
+    padding: 0.5rem 0.8rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-available {
+    background-color: var(--success-glow);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-borrowed {
+    background-color: var(--danger-glow);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Buttons */
+.btn-custom {
+    border-radius: 8px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none !important;
+}
+
+.btn-custom-primary {
+    background: var(--accent) !important;
+    color: white !important;
+}
+
+.btn-custom-primary:hover {
+    background: var(--accent-hover) !important;
+    box-shadow: 0 0 15px var(--accent-glow) !important;
+}
+
+.btn-custom-success {
+    background: var(--success) !important;
+    color: white !important;
+}
+
+.btn-custom-success:hover {
+    box-shadow: 0 0 15px var(--success-glow) !important;
+}
+
+.btn-custom-danger {
+    background: var(--danger) !important;
+    color: white !important;
+}
+
+.btn-custom-danger:hover {
+    box-shadow: 0 0 15px var(--danger-glow) !important;
+}
+
+.btn-custom-warning {
+    background: var(--warning) !important;
+    color: white !important;
+}
+
+.btn-custom-secondary {
+    background: var(--bg-surface-hover) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.btn-custom-secondary:hover {
+    background: var(--border) !important;
+}
+
+/* Forms Redesign */
+.form-group label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-control-custom {
+    background: #0f172a !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control-custom:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+    outline: none !important;
+}
+
+.form-control-custom::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Footer styling */
+.footer-custom {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer-custom strong {
+    color: var(--accent);
+}
+
+/* Alert Styling */
+.alert-custom {
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-custom-danger {
+    background-color: var(--danger-glow);
+    color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.alert-custom-info {
+    background-color: var(--accent-glow);
+    color: var(--text-primary);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Pagination Custom */
+.pagination-custom .page-link {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border) !important;
+    color: var(--text-secondary) !important;
+    margin: 0 3px;
+    border-radius: 6px;
+}
+
+.pagination-custom .page-link:hover {
+    background-color: var(--bg-surface-hover) !important;
+    color: var(--text-primary) !important;
+}
+
+.pagination-custom .page-item.active .page-link {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: white !important;
+}

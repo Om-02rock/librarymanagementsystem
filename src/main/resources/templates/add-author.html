@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="comman/header :: head('Add Author')"></head>
+<body>
+    <div th:insert="comman/header :: header"></div>
+    
+    <div class="container main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-custom">
+                    <h2 class="mb-4"><i class="fas fa-user-plus mr-2" style="color: var(--accent);"></i>Add New Author</h2>
+                    
+                    <form th:action="@{/add-author}" th:object="${author}" method="post">
+                        <div class="form-group">
+                            <label for="name">Author Name</label>
+                            <input type="text" th:field="*{name}" class="form-control form-control-custom" id="name" placeholder="Enter author name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Biography / Description</label>
+                            <textarea th:field="*{description}" class="form-control form-control-custom" id="description" placeholder="Enter short bio or description" rows="4" required></textarea>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-custom btn-custom-primary"><i class="fas fa-save mr-1"></i>Save Author</button>
+                            <a href="/authors" class="btn-custom btn-custom-secondary"><i class="fas fa-times mr-1"></i>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:insert="comman/footer :: footer"></div>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="comman/header :: head('Issue Book')"></head>
+<body>
+    <div th:insert="comman/header :: header"></div>
+    
+    <div class="container main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-custom">
+                    <h2 class="text-center mb-4"><i class="fas fa-hand-holding-usable mr-2"></i>Issue Book</h2>
+                    
+                    <div class="p-3 mb-4 rounded" style="background: var(--bg-surface-hover); border-left: 4px solid var(--accent);">
+                        <h5 class="mb-1" th:text="${book.name}"></h5>
+                        <p class="mb-0 text-muted">
+                            <strong>ISBN:</strong> <span th:text="${book.isbn}"></span> | 
+                            <strong>Serial:</strong> <span th:text="${book.serialName}"></span>
+                        </p>
+                    </div>
+
+                    <form th:action="@{/save-issue}" th:object="${issue}" method="post">
+                        <!-- Link to Book -->
+                        <input type="hidden" th:field="*{book.id}" />
+                        
+                        <div class="form-group">
+                            <label for="borrowerName">Borrower Name</label>
+                            <input type="text" th:field="*{borrowerName}" class="form-control form-control-custom" id="borrowerName" placeholder="Enter member/student name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="borrowerEmail">Borrower Email</label>
+                            <input type="email" th:field="*{borrowerEmail}" class="form-control form-control-custom" id="borrowerEmail" placeholder="name@domain.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="issueDate">Issue Date</label>
+                                <input type="date" th:field="*{issueDate}" class="form-control form-control-custom" id="issueDate" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dueDate">Due Date</label>
+                                <input type="date" th:field="*{dueDate}" class="form-control form-control-custom" id="dueDate" required>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-custom btn-custom-primary"><i class="fas fa-check mr-1"></i>Confirm Issue</button>
+                            <a href="/books" class="btn-custom btn-custom-secondary"><i class="fas fa-times mr-1"></i>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:insert="comman/footer :: footer"></div>
+</body>
+</html>
+

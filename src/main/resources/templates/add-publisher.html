@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="comman/header :: head('Add Publisher')"></head>
+<body>
+    <div th:insert="comman/header :: header"></div>
+    
+    <div class="container main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-custom">
+                    <h2 class="mb-4"><i class="fas fa-building mr-2" style="color: var(--accent);"></i>Add New Publisher</h2>
+                    
+                    <form th:action="@{/add-publisher}" th:object="${publisher}" method="post">
+                        <div class="form-group">
+                            <label for="name">Publisher Name</label>
+                            <input type="text" th:field="*{name}" class="form-control form-control-custom" id="name" placeholder="Enter publisher name" required>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-custom btn-custom-primary"><i class="fas fa-save mr-1"></i>Save Publisher</button>
+                            <a href="/publishers" class="btn-custom btn-custom-secondary"><i class="fas fa-times mr-1"></i>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:insert="comman/footer :: footer"></div>
+</body>
+</html>
+

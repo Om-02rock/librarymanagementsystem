@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="comman/header :: head('Add Book')"></head>
+<body>
+    <div th:insert="comman/header :: header"></div>
+    
+    <div class="container main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-custom">
+                    <h2 class="mb-4"><i class="fas fa-plus-circle mr-2" style="color: var(--accent);"></i>Add New Book</h2>
+                    
+                    <form th:action="@{/add-book}" th:object="${book}" method="post">
+                        <div class="form-group">
+                            <label for="isbn">ISBN</label>
+                            <input type="text" th:field="*{isbn}" class="form-control form-control-custom" id="isbn" placeholder="e.g. AP1287" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Book Title</label>
+                            <input type="text" th:field="*{name}" class="form-control form-control-custom" id="name" placeholder="e.g. Spring in Action" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serialName">Serial Name / Number</label>
+                            <input type="text" th:field="*{serialName}" class="form-control form-control-custom" id="serialName" placeholder="e.g. CXEF12389" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea th:field="*{description}" class="form-control form-control-custom" id="description" placeholder="Enter short description of the book" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="category">Category</label>
+                                <select th:field="*{categories}" class="form-control form-control-custom" id="category" required>
+                                    <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="author">Author</label>
+                                <select th:field="*{authors}" class="form-control form-control-custom" id="author" required>
+                                    <option th:each="author: ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="publisher">Publisher</label>
+                                <select th:field="*{publishers}" class="form-control form-control-custom" id="publisher" required>
+                                    <option th:each="publisher: ${publishers}" th:value="${publisher.id}" th:text="${publisher.name}"></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-custom btn-custom-primary"><i class="fas fa-save mr-1"></i>Save Book</button>
+                            <a href="/books" class="btn-custom btn-custom-secondary"><i class="fas fa-times mr-1"></i>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:insert="comman/footer :: footer"></div>
+</body>
+</html>
+
