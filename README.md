@@ -1,7 +1,5 @@
 # Library Management System
 
-[![Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/Om-02rock/librarymanagementsystem)
-
 A Java Spring Boot-based web application for managing library books, authors, publishers, categories, and borrowing transactions.
 
 ## Features
