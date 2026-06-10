@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: library-management-system
+    env: docker
+    plan: free
